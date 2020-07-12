@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>Robot</title>
+	</head>
+	<body>
+	<h1>ROBOT<h1>
+
+
+		<style>
+		body{
+			background-color: #800080;
+		}
+		     .bt1{
+		        position: relative;
+		        top:50px;
+						left:80px;
+
+		        color: #FF000;
+
+		    }
+		    .bt2{
+					position: relative;
+					top:250px;
+					right:10px;
+					color: #FF000;
+		    }
+				.bt3{
+				position: relative;
+				left:50px;
+				top:150px;
+				color: #FF000;
+			}
+			.bt4{
+			position: relative;
+			top:145px;
+			right:250px;
+
+			color: #FF0000;
+		}
+		.bt5{
+		position: relative;
+		right:200px;
+		top:150px;
+		color: #FF000;
+	}
+
+		</style>
+
+
+	<button id="FWD" class="robot bt1" >FORWARD</button>
+	<button id="BAC" class="robot bt2">BACKWARD</button>
+	<button id="RGT" class="robot bt3">RIGHT</button>
+	<button id="LFT" class="robot bt4">LEFT</button>
+	<button id="STP" class="robot bt5">STOP</button>
+
+
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$(".robot").click(function()
+			{
+				var cmd = $(this).attr('id');
+				$.get("http://", {robot:cmd});
+			});
+		});
+	</script>
+	￼ <form method="get" action="View.php">
+
+	<button id="LFT" type="submit" name="l" class='Left'>Left</button>
+
+	<button id="RGT" type="submit" name="r" class='Right'>Right</button>
+
+	<button id="FWD" type="submit" name="f" class='forward'>FORWARD</button>
+
+	<button id="BAC" type="submit" name="b" class='BACKWARD' >BACKWARD</button>
+
+	<button id="STP" type="submit" name="s" class='stop'>Stop</button>
+
+	</form>
+
+	</body>
+</html>
